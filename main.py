@@ -10,6 +10,17 @@ app.mount('/static', StaticFiles(directory='static'), name='static')
 templates = Jinja2Templates(directory='templates')
 
 
+# INFO: Jason
+# TODO: Assign index route to a template
+# TODO: Get Tailwind added to template
+# TODO: Get Makefile added to simplify process
+# TODO: Integrate HTMX for templating concerns?
+
+
+# INFO: Takuto
+# TODO: Get AI Integrated into backend
+
+
 @app.get("/")
 def read_root():
     return {"I Love": "You"}
