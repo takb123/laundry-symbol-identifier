@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Laundry Identifer AI</title>
+  <script src="{{ url_for('static', path='/htmx.min.js') }}"></script>
+  <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
+</head>
+
+<body>
+  <h1>Welcome to this page</h1>
+  <p>
+    The mission of our project is to identify the laundry signs and tell you what that text means
+  </p>
+
+  <button hx-get="/test" hx-target="#test_html">
+    This should get text from the server
+  </button>
+
+  <div id="test_html" hx-swap="innerHTML"></div>
+</body>
+
+</html>

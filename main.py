@@ -11,19 +11,31 @@ templates = Jinja2Templates(directory='templates')
 
 
 # INFO: Jason
-# TODO: Assign index route to a template
-# TODO: Get Tailwind added to template
-# TODO: Get Makefile added to simplify process
-# TODO: Integrate HTMX for templating concerns?
+# PASSED: Assign index route to a template
+# PASSED: Integrate HTMX for templating concerns?
+# PASSED: Get Tailwind added to template
+# PASSED: Get Makefile added to simplify process
+# BUG: Safari seems to use old version of the Tailwind Template
 
 
 # INFO: Takuto
 # TODO: Get AI Integrated into backend
 
 
-@app.get("/")
-def read_root():
-    return {"I Love": "You"}
+@app.get("/", response_class=HTMLResponse)
+def read_root(request: Request):
+    return templates.TemplateResponse('index.html', {'request': request})
+
+
+@app.get("/test", response_class=HTMLResponse)
+async def read_test_html(request: Request):
+    return """
+    <html>
+        <body>
+            <h1> Hello from the server </h1>
+        </body>
+    </html>
+    """
 
 
 @app.get("/todo/{id}", response_class=HTMLResponse)
