@@ -5,6 +5,7 @@
   <title>Laundry Identifer AI</title>
   <script src="{{ url_for('static', path='/htmx.min.js') }}"></script>
   <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', path='/pico.min.css') }}" rel="stylesheet">
 </head>
 
 <body>
@@ -13,11 +14,9 @@
     The mission of our project is to identify the laundry signs and tell you what that text means
   </p>
 
-  <button hx-get="/test" hx-target="#test_html">
+  <button>
     This should get text from the server
   </button>
-
-  <div id="test_html" hx-swap="innerHTML"></div>
 </body>
 
 </html>
