@@ -2,21 +2,52 @@
 <html>
 
 <head>
-  <title>Laundry Identifer AI</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="{{ url_for('static', path='/htmx.min.js') }}"></script>
   <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
   <link href="{{ url_for('static', path='/pico.min.css') }}" rel="stylesheet">
+  <title>Laundry Identifer AI</title>
 </head>
 
 <body>
-  <h1>Welcome to this page</h1>
-  <p>
-    The mission of our project is to identify the laundry signs and tell you what that text means
-  </p>
+  <header class="container">
+    <nav>
+      <ul>Icon</ul>
+      <ul>
+        <li>
+          <strong>Laundry Site</strong>
+        </li>
+      </ul>
+      <ul>
+        <li><a href="#" role="button">About</a></li>
+      </ul>
+    </nav>
+    <hgroup>
+      <h1>Launry Image</h1>
+      <h2>Submit your Laundy images here</h2>
+    </hgroup>
+  </header>
+  <main class="container">
+    <article>
+      <h2> Purpose </h2>
+      <p> Enter your picture at the proper channels and the AI will respond with that it recognizes </p>
+    </article>
 
-  <button>
-    This should get text from the server
-  </button>
+    <article>
+      <form>
+        <h2>
+
+          Submit a Picture
+        </h2>
+        <input type="file">
+        <button type="submit">Submit</button>
+      </form>
+    </article>
+  </main>
+  <footer class="container">
+    <p>Made by Tab123 and Khazixi</p>
+  </footer>
 </body>
 
 </html>
